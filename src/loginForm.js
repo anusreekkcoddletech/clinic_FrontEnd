@@ -10,14 +10,12 @@ const LoginPage = () => {
 
     const handleLogin = async () => {
         const apiUrl = 'http://localhost:3001/user/login';
-
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Origin': 'http://localhost:3000',
-
                 },
                 body: JSON.stringify({
                     username,
@@ -25,7 +23,6 @@ const LoginPage = () => {
                     employeeTypes
                 }),
             })
-
             if (response.ok) {
                 console.log('Login successful');
                 navigate('/home');
@@ -43,7 +40,6 @@ const LoginPage = () => {
             console.error('Error during login:', error.message);
         }
     }
-
     return (
         <div className="container">
             <h1 className='heading'>Login</h1>
