@@ -125,7 +125,6 @@ const UserSignUpPage = () => {
                         <select className='selectUserType' value={user_type} onChange={(e) => setUser_type(e.target.value)}>
                             <option value="">UserType</option>
                             <option value="patient">patient</option>
-                            <option value="doctor">doctor</option>
                         </select>
                     </label>
                 </div>
