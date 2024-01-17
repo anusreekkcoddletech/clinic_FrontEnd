@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
+import './app.css';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -36,8 +36,8 @@ const LoginPage = () => {
                     console.error('Login failed. Please try again later.');
                 }
             }
-        } catch (error) {
-            console.error('Error during login:', error.message);
+        } catch (err) {
+            console.error('Error during login:', err);
         }
     }
     return (
