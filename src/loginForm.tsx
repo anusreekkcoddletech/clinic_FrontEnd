@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
+import './app.css';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -10,14 +10,12 @@ const LoginPage = () => {
 
     const handleLogin = async () => {
         const apiUrl = 'http://localhost:3001/user/login';
-
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Origin': 'http://localhost:3000',
-
                 },
                 body: JSON.stringify({
                     username,
@@ -25,7 +23,6 @@ const LoginPage = () => {
                     employeeTypes
                 }),
             })
-
             if (response.ok) {
                 console.log('Login successful');
                 navigate('/home');
@@ -39,11 +36,10 @@ const LoginPage = () => {
                     console.error('Login failed. Please try again later.');
                 }
             }
-        } catch (error) {
-            console.error('Error during login:', error.message);
+        } catch (err) {
+            console.error('Error during login:', err);
         }
     }
-
     return (
         <div className="container">
             <h1 className='heading'>Login</h1>
