@@ -5,16 +5,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
   background-color: #ffffff;
-  padding: 24px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 4 0 10px rgba(0, 0, 0, 0.1);
-  width: 380px;
+  width: 400px;
   text-align: center;
+  margin: 30px;
 }
 
 .heading {
@@ -46,14 +47,13 @@ input,
   border: 1px solid #ced4da;
   border-radius: 14px;
 }
-
 .gender {
   margin: 0 10px;
   text-align: left;
 }
 
 .selectUserType {
-  width: 318px;
+  width: 380px;
   height: 40px;
   border: none;
 }
@@ -65,7 +65,7 @@ input,
 }
 
 .radioButton {
-  margin: 0px;
+  margin: 0 0 0 40px;
   width: 20px;
 }
 
