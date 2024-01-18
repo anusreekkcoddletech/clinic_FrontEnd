@@ -1,43 +1,52 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './signUp.css';
+const userenvFile = `${process.env.REACT_APP_signUpURL}`
 
+type userSignUpData = {
+    name: string;
+    username: string;
+    password: string;
+    age: string;
+    gender: string;
+    phone: string;
+    bloodGroup: string;
+    userType: string;
+}
 const UserSignUpPage = () => {
-    const [name, setName] = useState('');
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [age, setAge] = useState('');
-    const [gender, setGender] = useState('');
-    const [phone, setPhone] = useState('');
-    const [bloodGroup, setBloodGroup] = useState('');
-    const [user_type, setUser_type] = useState('');
-    const navigate = useNavigate();
+    const [formData, setFormData] = useState<userSignUpData>({
+        name: '',
+        username: '',
+        password: '',
+        age: '',
+        gender: '',
+        phone: '',
+        bloodGroup: '',
+        userType: '',
+    })
 
-
+    const loginNavigate = useNavigate();
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
     const handleRegistration = async () => {
-        const apiUrl = 'http://localhost:3001/user/signup';
         try {
-            const response = await fetch(apiUrl, {
+            const response = await fetch(userenvFile, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Origin': 'http://localhost:3000',
 
                 },
-                body: JSON.stringify({
-                    name,
-                    username,
-                    password,
-                    age,
-                    gender,
-                    phone,
-                    bloodGroup,
-                    user_type
-                }),
+                body: JSON.stringify(formData),
             })
             if (response.ok) {
                 console.log('Registration successful');
-                navigate('/login');
+                loginNavigate('/login');
 
             }
             else {
@@ -58,26 +67,30 @@ const UserSignUpPage = () => {
             <form className='RegistrationForm'>
                 <label className='userText'>Name:<input
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    name="name"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>Username:<input
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    name="username"
+                    value={formData.username}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>Password:<input
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    name="password"
+                    value={formData.password}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>Age:<input
                     type="text"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
+                    name="age"
+                    value={formData.age}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>
@@ -86,43 +99,48 @@ const UserSignUpPage = () => {
                         <label className='options'><input
                             className='radioButton'
                             type="radio"
+                            name="gender"
                             value="Male"
-                            checked={gender === 'Male'}
-                            onChange={() => setGender('Male')}
+                            checked={formData.gender === 'Male'}
+                            onChange={(e) => handleInputChange(e)}
                         />Male</label>
                         <label className='options'><input
                             className='radioButton'
                             type="radio"
+                            name="gender"
                             value="Female"
-                            checked={gender === 'Female'}
-                            onChange={() => setGender('Female')}
+                            checked={formData.gender === 'Female'}
+                            onChange={(e) => handleInputChange(e)}
                         />Female</label>
                         <label className='options'><input
                             className='radioButton'
                             type="radio"
+                            name="gender"
                             value="Other"
-                            checked={gender === 'Other'}
-                            onChange={() => setGender('Other')}
+                            checked={formData.gender === 'Other'}
+                            onChange={(e) => handleInputChange(e)}
                         />Other</label>
                     </div>
                 </label>
                 <label className='userText'>Phone:<input
                     type="text"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>BloodGroup:<input
                     type="text"
-                    value={bloodGroup}
-                    onChange={(e) => setBloodGroup(e.target.value)}
+                    name="bloodGroup"
+                    value={formData.bloodGroup}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <br></br><br></br>
                 <div className='userType'>
                     <h4 className='UserTypes'> userTypes:</h4>
                     <label className='user_type'>
-                        <select className='selectUserType' value={user_type} onChange={(e) => setUser_type(e.target.value)}>
+                        <select className='selectUserType' name="userType" value={formData.userType} onChange={(e) => handleInputChange(e)}>
                             <option value="">UserType</option>
                             <option value="patient">patient</option>
                         </select>

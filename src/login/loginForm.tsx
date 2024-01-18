@@ -1,27 +1,37 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './app.css';
+import './login.css'
+const envFile = `${process.env.REACT_APP_apiURL}`
 
+type loginData = {
+    username: string;
+    password: string;
+    employeeTypes: string;
+}
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [employeeTypes, setEmployeeTypes] = useState('');
+    const [formData, setFormData] = useState<loginData>({
+        username: '',
+        password: '',
+        employeeTypes: ''
+    })
     const navigate = useNavigate();
-
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
     const handleLogin = async () => {
-        const apiUrl = 'http://localhost:3001/user/login';
         try {
-            const response = await fetch(apiUrl, {
+            const response = await fetch(envFile, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Origin': 'http://localhost:3000',
                 },
-                body: JSON.stringify({
-                    username,
-                    password,
-                    employeeTypes
-                }),
+                body: JSON.stringify(formData),
             })
             if (response.ok) {
                 console.log('Login successful');
@@ -46,20 +56,23 @@ const LoginPage = () => {
             <form className='loginForm'>
                 <label className='userText'>Username:<input
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    name="username"
+                    value={formData.username}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>Password:<input
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    name="password"
+                    value={formData.password}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>employeeTypes:<input
                     type="text"
-                    value={employeeTypes}
-                    onChange={(e) => setEmployeeTypes(e.target.value)}
+                    name="employeeTypes"
+                    value={formData.employeeTypes}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <button type="button" className='submitButton' onClick={handleLogin}>
