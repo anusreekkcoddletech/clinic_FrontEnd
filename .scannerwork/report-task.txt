@@ -2,5 +2,5 @@ projectKey=clinicFrontEnd
 serverUrl=http://localhost:9000
 serverVersion=10.3.0.82913
 dashboardUrl=http://localhost:9000/dashboard?id=clinicFrontEnd
-ceTaskId=AY0bayV01lXMCw5oDFs4
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AY0bayV01lXMCw5oDFs4
+ceTaskId=AY0goA5qytClxGqeX71z
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AY0goA5qytClxGqeX71z

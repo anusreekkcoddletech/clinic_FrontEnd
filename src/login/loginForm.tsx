@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
 const envFile = `${process.env.REACT_APP_apiURL}`
+const urlFile = `${process.env.REACT_APP_employeeSignUpURL}`
+
 
 type loginData = {
     username: string;
@@ -29,7 +31,7 @@ const LoginPage = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Origin': 'http://localhost:3000',
+                    urlFile,
                 },
                 body: JSON.stringify(formData),
             })
@@ -41,7 +43,7 @@ const LoginPage = () => {
             else {
                 const responseData = await response.json();
                 if (responseData.message) {
-                    console.error(`Login failed: ${responseData.message}`);
+                    console.error('Login failed: ');
                 } else {
                     console.error('Login failed. Please try again later.');
                 }
