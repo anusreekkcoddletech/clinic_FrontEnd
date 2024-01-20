@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: aliceblue;
+}
+.widget{
+  line-height: 2.5rem;
+  margin-bottom: 0;
+  font-size: 2px;
+  background-color: #3d4470;
+  width: 100%;
+  color: #d6dadffa;
+  text-align: center;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mainHeader {
+  background-color: #14486c;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.clinicContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:16px 20px 0 20px;
+}
+
+.textContainer{
+  width: 40%;
+}
+
+.sectionHeading {
+  color: #3498db;
+  font-size: 38px;
+
+}
+
+.clinicHeading{
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.clinicDescription {
+  font-size: 24px;
+  color: #555;
+}
+
+.facilityList {
+  list-style-type: circle;
+  padding: 0;
+  margin: 0;
+}
+
+.facilityList li,.expertiseList li {
+  margin-bottom: 5px;
+  justify-content: space-evenly;
+  font-size: 24px;
+
+}
+
+.imageContainer {
+  width: 55%;
+  text-align: right;
+  position: relative;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navigationLinks {
+  display: flex;
+}
+
+.navigationLink {
+  margin: 0 15px;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+}
+
+.additionalFeatures {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -5,7 +5,6 @@ import './login.css'
 const envFile = `${process.env.REACT_APP_apiURL}`
 const urlFile = `${process.env.REACT_APP_employeeSignUpURL}`
 
-
 type loginData = {
     username: string;
     password: string;

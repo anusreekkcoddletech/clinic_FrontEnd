@@ -12,9 +12,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/userSignUp" element={<UserSignUpPage />} />
-        <Route path="/" element={<EmployeeSignUpPage />} />
+        <Route path="/employeeSignUp" element={<EmployeeSignUpPage />} />
       </Routes>
     </BrowserRouter>
   )
