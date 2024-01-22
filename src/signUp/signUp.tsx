@@ -63,6 +63,7 @@ const UserSignUpPage = () => {
         }
     }
     return (
+        <body className='userSignUpBody'>
         <div className="container">
             <h1 className='heading'>Registration</h1>
             <form className='RegistrationForm'>
@@ -153,6 +154,7 @@ const UserSignUpPage = () => {
                 </button>
             </form>
         </div>
+        </body>
     )
 }
 

@@ -72,6 +72,7 @@ const EmployeeSignUpPage = () => {
         }
     }
     return (
+        <body className='employeeSignUpBody'>
         <div className="container">
             <h1 className='heading'>Registration</h1>
             <form className='employeeRegistrationForm'>
@@ -195,6 +196,7 @@ const EmployeeSignUpPage = () => {
                 </button>
             </form>
         </div>
+        </body>
     )
 }
 

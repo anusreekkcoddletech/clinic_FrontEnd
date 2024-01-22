@@ -52,6 +52,7 @@ const LoginPage = () => {
         }
     }
     return (
+        <body className='loginBody'>
         <div className="container">
             <h1 className='heading'>Login</h1>
             <form className='loginForm'>
@@ -81,6 +82,7 @@ const LoginPage = () => {
                 </button>
             </form>
         </div>
+        </body>
     )
 }
 

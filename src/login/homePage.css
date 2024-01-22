@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  background-color: aliceblue;
+.homePageBody {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
-.widget{
+
+.widget {
   line-height: 2.5rem;
   margin-bottom: 0;
   font-size: 2px;
@@ -34,10 +38,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:16px 20px 0 20px;
+  padding: 16px 20px 0 20px;
 }
 
-.textContainer{
+.textContainer {
   width: 40%;
 }
 
@@ -47,7 +51,7 @@ body {
 
 }
 
-.clinicHeading{
+.clinicHeading {
   font-size: 42px;
   margin-bottom: 20px;
   color: white;
@@ -64,7 +68,8 @@ body {
   margin: 0;
 }
 
-.facilityList li,.expertiseList li {
+.facilityList li,
+.expertiseList li {
   margin-bottom: 5px;
   justify-content: space-evenly;
   font-size: 24px;
