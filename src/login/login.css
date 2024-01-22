@@ -1,0 +1,60 @@
+.loginBody {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #212d39;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.heading {
+  color: #333;
+}
+.homePage{
+ color: #ffffff;
+
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userText {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 284px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.submitButton {
+  padding: 12px;
+  background-color: #030609;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}

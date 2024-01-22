@@ -1,27 +1,29 @@
-body {
+.userSignUpBody {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #212d39;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 4 0 10px rgba(0, 0, 0, 0.1);
+  width: 480px;
   text-align: center;
+  margin: 30px;
 }
 
 .heading {
   color: #333;
 }
-.homePage{
- color: #ffffff;
+
+.homePage {
+  color: #ffffff;
 
 }
 
@@ -36,13 +38,43 @@ body {
   color: #555;
 }
 
-input {
+input,
+.user_type {
   padding: 10px;
   margin-bottom: 20px;
-  width: 284px;
+  width: 400px;
   box-sizing: border-box;
   border: 1px solid #ced4da;
-  border-radius: 4px;
+  border-radius: 14px;
+}
+.gender {
+  margin: 0 10px;
+  text-align: left;
+}
+
+.genderOptions {
+  height: 20px;
+  margin: 25px;
+  display: flex
+}
+
+.radioButton {
+  margin: 0 0 0 26px;
+  width: 22px;
+}
+
+.userType {
+  width: 345px;
+}
+
+.UserTypes {
+  text-align: left;
+  margin: 0 2px 16px 6px;
+}
+.selectUserType {
+  width: 330px;
+  height: 40px;
+  border: none;
 }
 
 .submitButton {
