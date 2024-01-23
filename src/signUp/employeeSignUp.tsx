@@ -73,7 +73,7 @@ const EmployeeSignUpPage = () => {
     }
     return (
         <body className='employeeSignUpBody'>
-        <div className="container">
+        <div className="employeeSignUpContainer">
             <h1 className='heading'>Registration</h1>
             <form className='employeeRegistrationForm'>
                 <label className='userText'>Name:<input

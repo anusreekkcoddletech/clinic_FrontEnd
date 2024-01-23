@@ -64,7 +64,7 @@ const UserSignUpPage = () => {
     }
     return (
         <body className='userSignUpBody'>
-        <div className="container">
+        <div className="signUpcontainer">
             <h1 className='heading'>Registration</h1>
             <form className='RegistrationForm'>
                 <label className='userText'>Name:<input

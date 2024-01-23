@@ -1,28 +1,24 @@
 import React from 'react';
-import './homePage.css';
+import './doctorHome.css';
 import HomePageHeader from '../components/homeHeader'
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
 
-
-const HomePage = () => {
+const DoctorHome = () => {
     return (
-        <body className='homePageBody'>
+        <body className='doctorhomePageBody'>
             <div className="mainContainer">
-                <HomePageHeader ></HomePageHeader>
+               <HomePageHeader></HomePageHeader>
                 <div className="clinicContainer">
-                    <About/>
+                   <About></About>
                     <div className="imageContainer">
-                        <img src="https://www.kevinmd.com/wp-content/uploads/shutterstock_143110750.jpg" alt="Clinic" />
+                        <img src="https://i.pinimg.com/564x/f9/c2/9b/f9c29b810bfcc5721dd1920a5eddc686.jpg" alt="Clinic" />
                     </div>
                 </div>
                 <AdditionalFeatures></AdditionalFeatures>
-               
-                <div className="widget">
-                    Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
+                <div className="widget">Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
             </div>
         </body>
     )
 }
-
-export default HomePage;
+export default DoctorHome;

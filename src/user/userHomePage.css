@@ -2,12 +2,19 @@
   box-sizing: border-box;
 }
 
-.homePageBody {
+.userHomePageBody {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
+}
+
+.consultTime {
+  border: 1px solid black;
+  border-radius: 22px;
+  padding: 16px;
+  margin-top: 95px;
 }
 
 .widget {
@@ -20,14 +27,7 @@
   text-align: center;
 }
 
-.consultTime {
-  border: 1px solid black;
-  border-radius: 22px;
-  padding: 16px;
-  margin-top: 95px;
-}
-
-.mainContainer {
+.userMainContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px 0 20px;
+  margin: 60px 40px 0 40px;
 }
 
 .textContainer {
@@ -69,7 +69,8 @@
   color: #555;
 }
 
-.facilityList,.expertiseList {
+.facilityList,
+.expertiseList {
   list-style-type: circle;
   padding: 0;
   margin: 0;
@@ -84,13 +85,13 @@
 }
 
 .imageContainer {
-  width: 55%;
+  width: 40%;
   text-align: right;
   position: relative;
 }
 
 .imageContainer img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -105,11 +106,31 @@
   color: white;
 }
 
+.coverImage {
+  background-image: url(https://cdn-japkb.nitrocdn.com/SSwUWpkTxoYvjJZwDMxKefCrTydDdImp/assets/images/optimized/rev-7d22fb8/starcitydentalne.com/wp-content/uploads/2023/12/StarCityDental-Mimi-and-brandon-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.coverHeading,
+.coverText {
+  text-align: center;
+  color: darkgray;
+  height: 150px;
+  margin-top: 145px;
+}
+
+.coverHeading {
+  font-size: 50px;
+}
+
+.coverText {
+  font-size: 25px;
+  margin-top: 20px;
+}
 .additionalFeatures {
-  padding: 10px;
+  margin: 50px 0;
   display: flex;
   justify-content: space-around;
-}
-.Expertise{
-  display: block;
 }
