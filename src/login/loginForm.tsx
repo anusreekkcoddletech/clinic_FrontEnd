@@ -1,31 +1,39 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
+import './login.css'
+const envFile = `${process.env.REACT_APP_apiURL}`
+const urlFile = `${process.env.REACT_APP_employeeSignUpURL}`
 
+type loginData = {
+    username: string;
+    password: string;
+    employeeTypes: string;
+}
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [employeeTypes, setEmployeeTypes] = useState('');
+    const [formData, setFormData] = useState<loginData>({
+        username: '',
+        password: '',
+        employeeTypes: ''
+    })
     const navigate = useNavigate();
-
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
     const handleLogin = async () => {
-        const apiUrl = 'http://localhost:3001/user/login';
-
         try {
-            const response = await fetch(apiUrl, {
+            const response = await fetch(envFile, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Origin': 'http://localhost:3000',
-
+                    urlFile,
                 },
-                body: JSON.stringify({
-                    username,
-                    password,
-                    employeeTypes
-                }),
+                body: JSON.stringify(formData),
             })
-
             if (response.ok) {
                 console.log('Login successful');
                 navigate('/home');
@@ -34,36 +42,39 @@ const LoginPage = () => {
             else {
                 const responseData = await response.json();
                 if (responseData.message) {
-                    console.error(`Login failed: ${responseData.message}`);
+                    console.error('Login failed: ');
                 } else {
                     console.error('Login failed. Please try again later.');
                 }
             }
-        } catch (error) {
-            console.error('Error during login:', error.message);
+        } catch (err) {
+            console.error('Error during login:', err);
         }
     }
-
     return (
+        <body className='loginBody'>
         <div className="container">
             <h1 className='heading'>Login</h1>
             <form className='loginForm'>
                 <label className='userText'>Username:<input
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    name="username"
+                    value={formData.username}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>Password:<input
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    name="password"
+                    value={formData.password}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <label className='userText'>employeeTypes:<input
                     type="text"
-                    value={employeeTypes}
-                    onChange={(e) => setEmployeeTypes(e.target.value)}
+                    name="employeeTypes"
+                    value={formData.employeeTypes}
+                    onChange={(e) => handleInputChange(e)}
                 />
                 </label>
                 <button type="button" className='submitButton' onClick={handleLogin}>
@@ -71,6 +82,7 @@ const LoginPage = () => {
                 </button>
             </form>
         </div>
+        </body>
     )
 }
 

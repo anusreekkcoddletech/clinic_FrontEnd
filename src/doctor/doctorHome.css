@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .doctorhomePageBody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  .consultTime{
+    border: 1px solid black;
+    border-radius: 22px;
+    padding: 16px;
+    margin-top: 95px;
+  }
+
+  .widget {
+    line-height: 2.5rem;
+    margin-bottom: 0;
+    font-size: 2px;
+    background-color: #3d4470;
+    width: 100%;
+    color: #d6dadffa;
+    text-align: center;
+  }
+  
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .mainHeader {
+    background-color: #14486c;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+  
+  .clinicContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 40px 0 40px;
+  }
+  
+  .textContainer {
+    width: 40%;
+  }
+  
+  .sectionHeading {
+    color: #3498db;
+    font-size: 38px;
+  
+  }
+  
+  .clinicHeading {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .clinicDescription {
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .facilityList ,.expertiseList{
+    list-style-type: circle;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .facilityList li,
+  .expertiseList li {
+    margin-bottom: 5px;
+    justify-content: space-evenly;
+    font-size: 24px;
+  
+  }
+  
+  .imageContainer {
+    width: 35%;
+    text-align: right;
+    position: relative;
+    margin-right: 120px;
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .userNavigationLinks {
+    display: flex;
+  }
+  
+  .navigationLink {
+    margin: 0 15px;
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .additionalFeatures {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+  }
