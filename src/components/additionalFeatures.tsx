@@ -1,4 +1,5 @@
 import React from 'react';
+import './additionalFeatures.css';
 
 const AdditionalFeatures = () => {
     return (

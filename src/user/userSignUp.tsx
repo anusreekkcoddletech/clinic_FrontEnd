@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './signUp.css';
+import './userSignUp.css';
 const userenvFile = `${process.env.REACT_APP_signUpURL}`
 const urlFile = `${process.env.REACT_APP_OriginURL}`
 

@@ -3,21 +3,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
 const envFile = `${process.env.REACT_APP_apiURL}`
-const urlFile = `${process.env.REACT_APP_employeeSignUpURL}`
+const urlFile = `${process.env.REACT_APP_OriginURL}`
 
 type loginData = {
     username: string;
     password: string;
-    employeeTypes: string;
+    userTypes: string;
 }
 const LoginPage = () => {
+
     const [formData, setFormData] = useState<loginData>({
         username: '',
         password: '',
-        employeeTypes: ''
+        userTypes: ''
     })
     const navigate = useNavigate();
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const handleInputChangeOfLoginData = (e: React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -34,10 +35,32 @@ const LoginPage = () => {
                 },
                 body: JSON.stringify(formData),
             })
+            const responseData = await response.json();
+
+            console.log('responseData', responseData);
+           const token =  responseData.token
+     
+           localStorage.setItem('token', token)          
             if (response.ok) {
                 console.log('Login successful');
-                navigate('/home');
+                if (formData.userTypes === 'patient') {
+                    navigate('/userHomePage')
 
+                } else if (formData.userTypes === 'doctor') {
+                    navigate('/doctorHome')
+                } else if (formData.userTypes === 'nurse') {
+                    navigate('/')
+                } else if (formData.userTypes === 'dentalAssistant') {
+                    navigate('/')
+                } else if (formData.userTypes === 'technician') {
+                    navigate('/')
+                }else if (formData.userTypes === 'receptionist') {
+                    navigate('/')
+                }else if (formData.userTypes === 'pharmacist') {
+                    navigate('/pharmacyHome')
+                }else if (formData.userTypes === 'manager') {
+                    navigate('/managerHome')
+                }
             }
             else {
                 const responseData = await response.json();
@@ -51,6 +74,7 @@ const LoginPage = () => {
             console.error('Error during login:', err);
         }
     }
+
     return (
         <body className='loginBody'>
         <div className="container">
@@ -60,26 +84,35 @@ const LoginPage = () => {
                     type="text"
                     name="username"
                     value={formData.username}
-                    onChange={(e) => handleInputChange(e)}
+                    onChange={(e) => handleInputChangeOfLoginData(e)}
                 />
                 </label>
                 <label className='userText'>Password:<input
                     type="password"
                     name="password"
                     value={formData.password}
-                    onChange={(e) => handleInputChange(e)}
+                    onChange={(e) => handleInputChangeOfLoginData(e)}
                 />
                 </label>
-                <label className='userText'>employeeTypes:<input
-                    type="text"
-                    name="employeeTypes"
-                    value={formData.employeeTypes}
-                    onChange={(e) => handleInputChange(e)}
-                />
-                </label>
+                <div className='dropDownDiv'>
+                    <p className='userTypes'> User Type:</p>
+                    <label className='userTextUserTypes'>
+                        <select className='userTypesOptions' name="userTypes" value={formData.userTypes} onChange={(e) => handleInputChangeOfLoginData(e)}>
+                            <option value="">Select User Type</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="nurse">Nurse</option>
+                            <option value="dentalAssistant">DentalAssistant</option>
+                            <option value="technician">Technician</option>
+                            <option value="receptionist">Receptionist</option>
+                            <option value="pharmacist">Pharmacist</option>
+                            <option value="manager">Manager</option>
+                        </select>
+                    </label>
+                </div>
                 <button type="button" className='submitButton' onClick={handleLogin}>
                     Login
-                </button>
+                </button>    
             </form>
         </div>
         </body>

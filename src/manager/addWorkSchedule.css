@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .addWorkscheduleBody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .imageContainer {
+    width: 35%;
+    text-align: right;
+    position: relative;
+    margin-right: 120px;
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+  }
+  

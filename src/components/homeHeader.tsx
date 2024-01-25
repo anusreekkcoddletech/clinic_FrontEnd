@@ -9,7 +9,7 @@ const HomePageHeader = () => {
                         <Link to="/login" className="navigationLink">
                             Login
                         </Link>
-                        <Link to="/signup" className="navigationLink">
+                        <Link to="/userSignUp" className="navigationLink">
                             Signup
                         </Link>
                     </div>

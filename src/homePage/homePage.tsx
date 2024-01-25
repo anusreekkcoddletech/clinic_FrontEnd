@@ -1,9 +1,8 @@
 import React from 'react';
-import './homePage.css';
+import '../homePage/homePage.css';
 import HomePageHeader from '../components/homeHeader'
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
-
 
 const HomePage = () => {
     return (

@@ -20,25 +20,10 @@
   text-align: center;
 }
 
-.consultTime {
-  border: 1px solid black;
-  border-radius: 22px;
-  padding: 16px;
-  margin-top: 95px;
-}
-
 .mainContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.mainHeader {
-  background-color: #14486c;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center
 }
 
 .clinicContainer {
@@ -55,31 +40,6 @@
 .sectionHeading {
   color: #3498db;
   font-size: 38px;
-
-}
-
-.clinicHeading {
-  font-size: 38px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.clinicDescription {
-  font-size: 24px;
-  color: #555;
-}
-
-.facilityList,.expertiseList {
-  list-style-type: circle;
-  padding: 0;
-  margin: 0;
-}
-
-.facilityList li,
-.expertiseList li {
-  margin-bottom: 5px;
-  justify-content: space-evenly;
-  font-size: 24px;
 
 }
 
@@ -103,12 +63,6 @@
   font-size: 24px;
   text-decoration: none;
   color: white;
-}
-
-.additionalFeatures {
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
 }
 .Expertise{
   display: block;

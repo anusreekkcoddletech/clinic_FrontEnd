@@ -1,4 +1,5 @@
 import React from 'react';
+import './AboutHospital.css';
 
 const AboutData = () => {
     return (
