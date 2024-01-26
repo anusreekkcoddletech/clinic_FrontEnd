@@ -15,7 +15,6 @@ import ManagerHome from './manager/managerHome';
 import AddWorkSchedule from './manager/addWorkSchedule';
 import PharmacyHome from './pharmacy/pharmacyHome';
 import ViewMedicines from './pharmacy/viewMedicines';
-import ViewLowStockMedicines from './pharmacy/viewMedicines';
 import ViewExpiringMedicines from './pharmacy/viewLowStockMedicnes';
 import AddMedicine from './pharmacy/addMedicine';
 
@@ -38,7 +37,6 @@ function App() {
         <Route path="/addWorkSchedule" element={<AddWorkSchedule />} />
         <Route path="/pharmacyHome" element={<PharmacyHome />} />
         <Route path="/viewMedicines" element={<ViewMedicines />} />
-        <Route path="/viewLowStockMedicines" element={<ViewLowStockMedicines />} />
         <Route path="/viewExpiringMedicines" element={<ViewExpiringMedicines />} />
         <Route path="/addMedicine" element={<AddMedicine />} />
 

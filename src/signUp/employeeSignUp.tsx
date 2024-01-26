@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './employeeSignUp.css';
-
+import { fetchData } from '../util/util'
 
 type employeeSignUpData = {
     name: string;
@@ -42,16 +42,7 @@ const EmployeeSignUpPage = () => {
     }
     const handleEmployeeRegistration = async () => {
         try {
-            console.log(employeeenvFile)
-            const response = await fetch(employeeenvFile, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    employeeUrlFile,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData),
-            })
+            const response = await fetchData(employeeenvFile, formData, employeeUrlFile)
             if (response.ok) {
                 console.log('Registration successful');
                 employeeLoginNavigate('/login');
@@ -201,3 +192,4 @@ const EmployeeSignUpPage = () => {
 }
 
 export default EmployeeSignUpPage;
+

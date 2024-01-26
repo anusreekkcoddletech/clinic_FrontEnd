@@ -4,7 +4,7 @@ import { Link,useNavigate } from 'react-router-dom';
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
 
-const DoctorHome = () => {
+const PharmacyHome = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
         console.log('Logout successfully');
@@ -13,9 +13,9 @@ const DoctorHome = () => {
         navigate('/')
     };
     useEffect(()=>{
-         const doctorToken =  localStorage.getItem('token')
-         console.log('token', doctorToken);
-          if(!doctorToken) {
+         const PharmacyToken =  localStorage.getItem('token')
+         console.log('token', PharmacyToken);
+          if(!PharmacyToken) {
              navigate('/login')
       }
         })
@@ -58,4 +58,4 @@ const DoctorHome = () => {
         </body>
     )
 }
-export default DoctorHome;
+export default PharmacyHome;
