@@ -35,8 +35,8 @@ const PharmacyHome = () => {
                         <Link to="/viewExpiringMedicines" className="NavigationLink">
                             Expiring Medicines List
                         </Link>
-                        <Link to="/addMedicinesData" className="NavigationLink">
-                           Medicine Data
+                        <Link to="/addMedicine" className="NavigationLink">
+                           Add Medicine
                         </Link>
                         <button className="logoutButton" onClick={handleLogout}>
                             Logout
@@ -50,12 +50,7 @@ const PharmacyHome = () => {
                     </div>
                 </div>
                 <AdditionalFeatures></AdditionalFeatures>
-                <div className='specialities'>
-                    <h2 className='specialitiesHeading'>Next Level Dentistry</h2>
-                    <h3 className='specialitiesText'>Everything you need for exceptional oral health, all under our roof.</h3>
-                </div>
                 <Footer></Footer>
-                <div className="widget">Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
             </div>
         </body>
     )

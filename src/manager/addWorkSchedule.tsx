@@ -28,7 +28,7 @@ const AddWorkSchedule = () => {
     const handleLogout = () => {
         console.log('Logout successfully');
 
-        localStorage.setItem('token', '')
+        localStorage.removeItem('token')
         navigate('/login')
     };
     const managerToken = localStorage.getItem('token')
@@ -48,7 +48,7 @@ const AddWorkSchedule = () => {
     }
     const handleEmployeeWorkschedule = async () => {
         try {
-            const response = await fetchData(managerenvFile, formData,managerToken, managerUrlFile)
+            const response = await fetchData(managerenvFile, formData, managerToken, managerUrlFile)
             if (response.ok) {
                 console.log('Workschedule added');
                 employeeHomeNavigate('/managerHome');
@@ -142,7 +142,6 @@ const AddWorkSchedule = () => {
                 </div>
             </div>
             <Footer></Footer>
-
         </body>
     )
 }

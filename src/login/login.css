@@ -19,6 +19,8 @@
 
 .heading {
   color: #333;
+  margin-bottom: 12px;
+
 }
 .homePage{
  color: #ffffff;
@@ -62,6 +64,15 @@ input {
 .radioButton {
   margin: 0 0 0 40px;
   width: 48px;
+}
+.signUpNavigationLink{
+  text-decoration: none;
+  margin-left: 19px;
+  font-size: 18px;
+  color: olivedrab;
+}
+.signupText{
+  margin: 5px;
 }
 .submitButton {
   padding: 12px;

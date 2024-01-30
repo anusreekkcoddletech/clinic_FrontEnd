@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { fetchDatas } from '../util/signup'
 import './login.css'
 const envFile = `${process.env.REACT_APP_apiURL}`
@@ -98,6 +98,10 @@ return (
                         <button type="button" className='submitButton' onClick={handleLogin}>
                             Login
                         </button>
+                        <p className='signupText'>Don't you have an account
+                        <Link to="/userSignUp" className="signUpNavigationLink">
+                            Signup
+                        </Link></p>
                     </form>
                 </div>
             </body>

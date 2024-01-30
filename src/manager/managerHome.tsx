@@ -11,7 +11,7 @@ const ManagerHome = () => {
     const handleLogout = () => {
         console.log('Logout successfully');
 
-        localStorage.setItem('token', '')
+        localStorage.removeItem('token')
         navigate('/login')
     };
     useEffect(()=>{
