@@ -14,7 +14,6 @@
   line-height: 2.5rem;
   margin-bottom: 0;
   font-size: 2px;
-  background-color: #3d4470;
   width: 100%;
   color: #d6dadffa;
   text-align: center;
@@ -43,7 +42,7 @@
 
 
 .clinicHeading {
-  font-size: 38px;
+  font-size: 34px;
   margin-bottom: 20px;
   color: white;
 }
@@ -58,9 +57,3 @@
   width: 100%;
   height: auto;
 }
-
-.navigationLinks {
-  display: flex;
-}
-
-

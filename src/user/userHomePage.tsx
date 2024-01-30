@@ -1,33 +1,36 @@
-import React,{useEffect} from 'react';
-import { Link ,useNavigate} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './userHomePage.css';
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
+import Footer from '../components/footer'
+
 
 const UserHome = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
         console.log('Logout successfully');
-        navigate('/');
+        navigate('/login');
         localStorage.setItem('token', '')
-        navigate('/')
+        navigate('/login')
     };
-    useEffect(()=>{
-         const userToken =  localStorage.getItem('token')
-         console.log('token', userToken);
-          if(!userToken) {
-             navigate('/login')
-      }
-        })
+    useEffect(() => {
+        const userToken = localStorage.getItem('token')
+        console.log('token', userToken);
+        if (!userToken) {
+            navigate('/login')
+        }
+        if (userToken) {
+            navigate('/')
+        }
+    })
     return (
         <body className='userHomePageBody'>
             <div className="userMainContainer">
                 <header className="mainHeader">
+
                     <h1 className="clinicHeading">NARAYANA SPECIALTY DENTAL CARE</h1>
                     <div className="userNavigationLinks">
-                        <Link to="/" className="navigationLink">
-                            Home
-                        </Link>
                         <Link to="/appointmentBooking" className="navigationLink">
                             Book an appointment
                         </Link>
@@ -36,7 +39,7 @@ const UserHome = () => {
                         </button>
                     </div>
                 </header>
-        
+
                 <div className="clinicContainer">
                     <About></About>
                     <div className="imageContainer">
@@ -44,8 +47,8 @@ const UserHome = () => {
                     </div>
                 </div>
                 <AdditionalFeatures></AdditionalFeatures>
-                <div className="widget">
-                    Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
+               <Footer></Footer>
+                <div className="widget">Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
             </div>
         </body>
     )

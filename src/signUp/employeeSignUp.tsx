@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './employeeSignUp.css';
-import { fetchData } from '../util/util'
+import { fetchDatas } from '../util/signup'
 
 type employeeSignUpData = {
     name: string;
@@ -42,7 +42,7 @@ const EmployeeSignUpPage = () => {
     }
     const handleEmployeeRegistration = async () => {
         try {
-            const response = await fetchData(employeeenvFile, formData, employeeUrlFile)
+            const response = await fetchDatas(employeeenvFile, formData, employeeUrlFile)
             if (response.ok) {
                 console.log('Registration successful');
                 employeeLoginNavigate('/login');
@@ -158,12 +158,12 @@ const EmployeeSignUpPage = () => {
                     <label className='labelClass'>
                         <select className='selectType' name="departmentId" value={formData.departmentId} onChange={(e) => handleInputChangeOfEmployeeData(e)}>
                             <option value="">Select department</option>
-                            <option value="1">General Dentist</option>
-                            <option value="2">Pedodontist</option>
-                            <option value="3">Orthodontist</option>
-                            <option value="4">Pharmacy</option>
-                            <option value="5">Dental Nurse</option>
-                            <option value="6">Non-professional</option>
+                            <option value="GeneralDentist">General Dentist</option>
+                            <option value="Pedodontist">Pedodontist</option>
+                            <option value="Orthodontist">Orthodontist</option>
+                            <option value="Pharmacy">Pharmacy</option>
+                            <option value="DentalNurse">Dental Nurse</option>
+                            <option value="NonProfessional">Non-professional</option>
                         </select>
                     </label>
                 </div>

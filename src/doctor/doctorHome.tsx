@@ -3,6 +3,7 @@ import './doctorHome.css';
 import { Link,useNavigate } from 'react-router-dom';
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
+import Footer from '../components/footer'
 
 
 const DoctorHome = () => {
@@ -11,7 +12,7 @@ const DoctorHome = () => {
         console.log('Logout successfully');
 
         localStorage.setItem('token', '')
-        navigate('/')
+        navigate('/login')
     };
     useEffect(()=>{
          const doctorToken =  localStorage.getItem('token')
@@ -48,6 +49,7 @@ const DoctorHome = () => {
                     </div>
                 </div>
                 <AdditionalFeatures></AdditionalFeatures>
+               <Footer></Footer>
                 <div className="widget">Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
             </div>
         </body>

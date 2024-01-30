@@ -3,6 +3,7 @@ import './pharmacyHome.css';
 import { Link,useNavigate } from 'react-router-dom';
 import About from '../components/AboutHospital'
 import AdditionalFeatures from '../components/additionalFeatures'
+import Footer from '../components/footer'
 
 const PharmacyHome = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ const PharmacyHome = () => {
         console.log('Logout successfully');
 
         localStorage.setItem('token', '')
-        navigate('/')
+        navigate('/login')
     };
     useEffect(()=>{
          const PharmacyToken =  localStorage.getItem('token')
@@ -53,7 +54,8 @@ const PharmacyHome = () => {
                     <h2 className='specialitiesHeading'>Next Level Dentistry</h2>
                     <h3 className='specialitiesText'>Everything you need for exceptional oral health, all under our roof.</h3>
                 </div>
-                <footer> </footer>
+                <Footer></Footer>
+                <div className="widget">Timing : 10.00 am-1.00 pm &amp; 4.00 pm-6.00 pm </div>
             </div>
         </body>
     )

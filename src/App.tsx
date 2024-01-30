@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './login/loginForm';
 import UserSignUpPage from './user/userSignUp';
-import HomePage from './homePage/homePage';
 import EmployeeSignUpPage from './signUp/employeeSignUp';
 import UserHomePage from './user/userHomePage';
 import AppointmentBooking from './user/appointmentBooking';
@@ -23,11 +22,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/userSignUp" element={<UserSignUpPage />} />
         <Route path="/employeeSignUp" element={<EmployeeSignUpPage />} />
-        <Route path="/userHomePage" element={<UserHomePage />} />
+        <Route path="/" element={<UserHomePage />} />
         <Route path="/appointmentBooking" element={<AppointmentBooking />} />
         <Route path="/doctorHome" element={<DoctorHome />} />
         <Route path="/addPrescription" element={<AddPrescription />} />

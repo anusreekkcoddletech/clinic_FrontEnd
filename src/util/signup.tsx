@@ -1,8 +1,7 @@
 
-async function fetchData(
+async function fetchDatas(
   url: string,
   data: any,
-  token:any,
   urlFile: string) {
   try {
       const response = await fetch(url, {
@@ -10,7 +9,6 @@ async function fetchData(
           headers: {
               'Content-Type': 'application/json',
               'Origin': urlFile,
-              'Authorization': "Bearer " + token,
               'Accept': 'application/json'
           },
           body: JSON.stringify(data),
@@ -23,5 +21,5 @@ async function fetchData(
       }
 }
 
-export {fetchData}
+export {fetchDatas}
 

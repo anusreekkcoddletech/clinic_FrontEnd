@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchData } from '../util/util'
+import { fetchDatas } from '../util/signup'
 import './login.css'
 const envFile = `${process.env.REACT_APP_apiURL}`
 const urlFile = `${process.env.REACT_APP_OriginURL}`
@@ -27,7 +27,7 @@ const LoginPage = () => {
     }
     const handleLogin = async () => {
         try {
-            const response = await fetchData(envFile, formData, urlFile)
+            const response = await fetchDatas(envFile, formData, urlFile)
             if (response.ok) {
                 const responseData = await response.json();
                 console.log('responseData', responseData);
@@ -38,7 +38,7 @@ const LoginPage = () => {
                     console.log('Login successful');
                     const userTypesDestinations: { 
                         [key: string]: string } = {
-                        patient: '/userHomePage',
+                        patient: '/',
                         doctor: '/doctorHome',
                         nurse: '/',
                         dentalAssistant: '/',

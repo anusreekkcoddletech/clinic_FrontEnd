@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './userSignUp.css';
-import { fetchData } from '../util/util'
+import { fetchDatas } from '../util/signup'
 
 const userenvFile = `${process.env.REACT_APP_signUpURL}`
 const urlFile = `${process.env.REACT_APP_OriginURL}`
@@ -38,7 +38,7 @@ const UserSignUpPage = () => {
     }
     const handleRegistration = async () => {
         try {
-            const response = await fetchData(userenvFile, formData, urlFile)
+            const response = await fetchDatas(userenvFile, formData, urlFile)
             if (response.ok) {
                 console.log('Registration successful');
                 loginNavigate('/login');

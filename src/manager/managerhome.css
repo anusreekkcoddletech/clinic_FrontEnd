@@ -10,14 +10,14 @@
     background-color: white;
   }
 
-  .imageContainer {
+  .managerHomeImage {
     width: 35%;
     text-align: right;
     position: relative;
     margin-right: 120px;
   }
   
-  .imageContainer img {
+  .managerHomeImage img {
     width: 100%;
     height: auto;
   }
